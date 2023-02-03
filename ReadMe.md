@@ -1,4 +1,4 @@
-# Qlik CLI for OEM
+# Qlik CLI for OEM Platform Operations
 
 ## What is Qlik CLI
 

@@ -35,7 +35,7 @@ Authentications are managed once through the *Qlik CLI context*. You can have ma
 
 Qlik CLI is a Qlik product supported by Qlik. It can be used through Powershell, Bash, ...
 
-Qlik CLI give access to both : content management and Qlik Engine. It means that you can perform operations such as import and application, but also to connect to this application and perform a calculation. Specific operations as the build and unbuild (serialization) of an application are available.
+Qlik CLI give access to both : content management and Qlik Engine. It means that you can perform operations such as import an application, but also to connect to this application and perform a calculation. So, specific operations as the build and unbuild (serialization) of an application are available.
 
 [Qlik CLI for Windows](https://github.com/ahaydon/Qlik-Cli-Windows) is an Open Source project of command line interface made in powershell. Qlik CLI for Windows is only compatible with Qlik Sense Client Managed.
 
@@ -43,11 +43,11 @@ Qlik CLI give access to both : content management and Qlik Engine. It means that
 
 ## What is a common OEM use case
 
-As an OEM Partner, I need to be able to : 
+As an OEM Partner, I need to : 
 - To provision a tenant
-- To setup an interactive user to be able to login
+- To setup an interactive user to login
 - To setup a specific configuration (features, licences assignements, IDP, group provisioning,...)
-- To export from OEM master tenant an application and import/publish in a customer tenant
+- To export, import and publish an application from OEM master tenant to a customer tenant
 
 
 ![image](https://user-images.githubusercontent.com/24877503/202148698-f97b7ce6-13f7-458f-bc97-4e24b7180bfa.png)
@@ -59,19 +59,22 @@ As an OEM Partner, I need to be able to :
 *Examples*
 
 This example is based on the tutorial in [qlik.dev](https://qlik.dev/tutorials#platform-operations).
-However, this example is made with Qlik CLI and Powershell.
+However, it is made with Qlik CLI and Powershell.
+
+The goal is show easily the different steps and QLik CLI associated commands.
+It is not to provide an out of the box solution for production used. 
 
 *Context management*
 
 We use Qlik CLI context to connect to the different tenant with Qlik CLI.
-For Qlik Cloud contexts can be created with authentication based on API Key and OAuth credentials.
-For plateform operations, we used OAuth credentials. To be able to renew OAuth token, update existing context, etc. we are using an addional function which create or update context : setup_cli_context(). It is located in Util.ps.
+For Qlik Cloud contexts can be created with authentication based on API Key or with OAuth credentials.
+For plateform operations, we used OAuth credentials. To be able to renew OAuth token, update existing context, etc. we are using here an additional function which creates or updates the contexts. ``setup_cli_context()`` is located in Util.ps.
 
 *Variables management*
 
-Variables for credentials, spaces name, user email,... are located in the constant-priv.ps1 file.
+Variables for credentials, spaces name, user email,... are located in the ``constant-priv.ps1`` file.
 
-[GitHub Repository](https://github.com/BaptisteDurand/Qlik-CLI-for-OEM/archive/refs/heads/tenantManagement.zip)
+[GitHub Repository](https://github.com/BaptisteDurand/Qlik-CLI-for-OEM_PlatformOperations/tree/main/QlikCLI-Examples)
 
 ### 1. Tenant Creation
 
@@ -125,7 +128,7 @@ if($userTenantId -eq $targetTenantId){
 
 ### 2. Create an interactive user access
 
-Goal is to create a interactive user, with the tenant role admin to be able to connect to the new tenant.
+Goal is to create an interactive user with the tenant role admin to be able to connect to the new tenant.
 
 In this step we need to : 
 1. Get user information in the source tenant: 
@@ -297,7 +300,7 @@ if ($SPACE_MANAGED_PROD -ne $null){
 
 ## Industrialization
 
-These examples are made to present the different steps and Qlik CLI command in powershell to automate the standard platform operations from the tenant provisioning to the app deployment.
+These examples are made to present the different steps and Qlik CLI commands in powershell to automate the standard platform operations from the tenant provisioning to the app deployment.
 
 For a production use with a more industrialize solution we recommand to start from [Qlik OSS repository](https://github.com/qlik-oss/qlik-platform-examples/tree/main/qlik.dev/tutorials/platform-operations).
 These examples are available in a more robust code with error handling in : 

@@ -207,7 +207,7 @@ qlik group settings patch --body $body
 qlik license settings update --autoAssignAnalyzer=true --autoAssignProfessional=false
 
 # 1.5 Setup a JWT IDP
-$staticKeys = "{`\`"pem`\`": `\`"$public_key`\`",`\`"kid`\`":`\`"$JWT_KEY_ID`\`"}"
+$staticKeys = "{`\`"pem`\`": `\`"$JWT_PUBLIC_KEY`\`",`\`"kid`\`":`\`"$JWT_KEY_ID`\`"}"
 qlik identity-provider create jwtauth --tenantIds="$targetTenantId"  --provider=external  --protocol=jwtAuth --options-issuer="$JWT_ISSUER"  --options-staticKeys="[$staticKeys]" --verbose
 
 ############### Step 2 - Connect in JWT to provision group ###############

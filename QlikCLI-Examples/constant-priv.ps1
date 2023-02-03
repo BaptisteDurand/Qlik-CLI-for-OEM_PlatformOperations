@@ -10,7 +10,6 @@ $JWT_ISSUER='<JWT Issuer>'
 $JWT_KEY_ID='<JWT KID>'
 $JWT_PRIVATE_KEY='<JWT Private Key>'
 $JWT_PUBLIC_KEY='<JWT Public KEY>'
-$public_key='<JWT Public KEY>'
 
 ############### user Role Information ###############
 $ROLE_TENANT_ADMIN="TenantAdmin"

@@ -78,7 +78,7 @@ Variables for credentials, spaces name, user email,... are located in the consta
 Goal is to create a new target (customer) tenant.
 
 In this step we need to : 
-1. Iniate 2 contexts : 
+1. Initiate 2 contexts : 
 - The source tenant to get the licence
 - The registration tenant in the region we want to create the tenant
 2. Get the licence

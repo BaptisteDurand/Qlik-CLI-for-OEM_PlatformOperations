@@ -1,7 +1,3 @@
-# Qlik CLI for OEM Platform Operations
-
-## What is Qlik CLI
-
 Qlik CLI is a command line interface for Qlik, written in Go.
 
 Qlik CLI provides access to all public APIs for Qlik Cloud and also QRS API for Qlik Sense Client Managed.

@@ -1,8 +1,8 @@
 Qlik CLI is a command line interface for Qlik, written in Go.
 
-Qlik CLI provides access to all public APIs for Qlik Cloud and also QRS API for Qlik Sense Client Managed.
+It provides access to all public APIs for Qlik Cloud and also QRS API for Qlik Sense Client Managed.
 
-Qlik CLI can manage operations, such as :
+You can manage operations, such as :
 - Plateform operations (Tenant provisioning, Tenant configuration and adminsitration).
 - Import, export, publish, and republish apps.
 - Create, rename, remove, and update spaces and assign user access.
